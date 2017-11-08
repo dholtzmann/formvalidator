@@ -2,7 +2,7 @@ package formvalidator
 
 import (
 	"fmt"
-	"github.com/pkg/errors" // external dependency, for errors.Wrap()
+	"errors"
 	"html/template"
 	"log"
 )
@@ -75,13 +75,13 @@ func (i *singleInput) GetHTML() (template.HTML, error) {
 
 	// check for errors
 	if len(i.options) != len(i.labels) {
-		return template.HTML(""), errors.Wrap(ErrLabelOptionMismatch, "singleInput.getHTML()")
+		return template.HTML(""), ErrLabelOptionMismatch
 	}
 	if hasDuplicates(i.labels) {
-		return template.HTML(""), errors.Wrap(ErrLabelDuplicate, "singleInput.getHTML()")
+		return template.HTML(""), ErrLabelDuplicate
 	}
 	if hasDuplicates(i.options) {
-		return template.HTML(""), errors.Wrap(ErrOptionDuplicate, "singleInput.getHTML()")
+		return template.HTML(""), ErrOptionDuplicate
 	}
 
 	// render it
@@ -132,13 +132,13 @@ func (i *multiInput) GetHTML() (template.HTML, error) {
 
 	// check for errors
 	if len(i.options) != len(i.labels) {
-		return template.HTML(""), errors.Wrap(ErrLabelOptionMismatch, "multiInput.getHTML()")
+		return template.HTML(""), ErrLabelOptionMismatch
 	}
 	if hasDuplicates(i.labels) {
-		return template.HTML(""), errors.Wrap(ErrLabelDuplicate, "multiInput.getHTML()")
+		return template.HTML(""), ErrLabelDuplicate
 	}
 	if hasDuplicates(i.options) {
-		return template.HTML(""), errors.Wrap(ErrOptionDuplicate, "multiInput.getHTML()")
+		return template.HTML(""), ErrOptionDuplicate
 	}
 	// i.values could be set by merging raw form data to a form struct
 	//	Raw form data from a user cannot be trusted, (HTML injection), but it is not a programmer error so it should not return an error as that would cause a panic with template.Must()

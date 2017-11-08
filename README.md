@@ -116,4 +116,5 @@ See the file 'validator_test.go' for examples of how to use the validation rules
 
 ## Todo
 * Write Go documentation in comments. (typical godoc.org format)
-* Expand README.md
+* Improve README.md
+* Add more translations and fix errors in locales/locales.go
