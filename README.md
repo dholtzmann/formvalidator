@@ -84,7 +84,7 @@ func indexPage(w http.ResponseWriter, r *http.Request) {
 - MaxStrLen(max uint32)
 - StrLen(min, max uint32)
 - UTF8LetterNum()
-- StrMatch(form.Get("ConfirmPassword"))
+- StrMatch(comparison string)
 - IsJSON()
 - WebRequestURI()
 - Boolean()
