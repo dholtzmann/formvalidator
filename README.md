@@ -25,9 +25,10 @@ go get -u github.com/dholtzmann/formvalidator
 	package main
 
 	import (
-		fv "github.com/dholtzmann/formvalidator"
 		"html/template"
 		"net/http"
+
+		fv "github.com/dholtzmann/formvalidator"
 	)
 
 	func main() {
