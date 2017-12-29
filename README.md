@@ -75,39 +75,42 @@ go get -u github.com/dholtzmann/formvalidator
 
 ## Validation rules
 
-Required()
-RequiredMultiple()
-Email(allowThrowawayDomains bool)
-AlphaNumeric()
-MinStrLen(min uint32)
-MaxStrLen(max uint32)
-StrLen(min, max uint32)
-UTF8LetterNum()
-StrMatch(form.Get("ConfirmPassword"))
-IsJSON()
-WebRequestURI()
-Boolean()
+#### rules-string.go
+- Required()
+- RequiredMultiple()
+- Email(allowThrowawayDomains bool)
+- AlphaNumeric()
+- MinStrLen(min uint32)
+- MaxStrLen(max uint32)
+- StrLen(min, max uint32)
+- UTF8LetterNum()
+- StrMatch(form.Get("ConfirmPassword"))
+- IsJSON()
+- WebRequestURI()
+- Boolean()
 
-Numeric()
-IntRange(min, max int)
-IsFloat64()
-FloatRange(min, max float64)
-CreditCard(allowTestingNumbers bool)
-Latitude()
-Longitude()
-ISBN() [format: Strlen 10 or 13]
-IsUUID(version uint32) [format: UUIDv3, UUIDv4, UUIDv5]
-IsDate() [format: DD-MM-YYYY]
-IsTime() [format: HH:MM:SS]
-IsDateTime() [format: DD-MM-YYYY HH:MM:SS]
+#### rules-numeric.go
+- Numeric()
+- IntRange(min, max int)
+- IsFloat64()
+- FloatRange(min, max float64)
+- CreditCard(allowTestingNumbers bool)
+- Latitude()
+- Longitude()
+- ISBN() [format: Strlen 10 or 13]
+- IsUUID(version uint32) [format: UUIDv3, UUIDv4, UUIDv5]
+- IsDate() [format: DD-MM-YYYY]
+- IsTime() [format: HH:MM:SS]
+- IsDateTime() [format: DD-MM-YYYY HH:MM:SS]
 
-CSVEntryStrLen(delimiter rune, minLenValue, maxLenValue uint32)
-CountryCode() [format: ISO-3166, 2 letters]
-InListMultiple(list []string)
-InListSingle(list []string)
-NotInListSingle(list []string)
-CurrencyCode() [format: ISO-4217, 3 letters]
-NotCommonPassword()
+#### rules-list.go
+- CSVEntryStrLen(delimiter rune, minLenValue, maxLenValue uint32)
+- CountryCode() [format: ISO-3166, 2 letters]
+- InListMultiple(list []string)
+- InListSingle(list []string)
+- NotInListSingle(list []string)
+- CurrencyCode() [format: ISO-4217, 3 letters]
+- NotCommonPassword()
 
 See the file 'validator_test.go' for examples of how to use the validation rules.
 
