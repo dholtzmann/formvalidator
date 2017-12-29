@@ -1,6 +1,7 @@
 package formvalidator
 
-import ()
+import (
+)
 
 /*
 	These are translated error messages for form validation. They are provided for convenience, not all are complete.
