@@ -20,6 +20,7 @@ go get -u github.com/dholtzmann/formvalidator
 
 ```go
 	import(
+		fv "github.com/dholtzmann/formvalidator"
 		"github.com/dholtzmann/formvalidator/extras/zxcvbn"
 	)
 
@@ -27,7 +28,7 @@ go get -u github.com/dholtzmann/formvalidator
 
 	func something() {
 		rules := map[string][]fv.Rule{
-			"password": fv.RuleChain(IsStrongPassword(2, form.Get("email"))),
+			"password": fv.RuleChain(zxcvbn.IsStrongPassword(2, form.Get("email"))),
 		}
 	}
 ```
